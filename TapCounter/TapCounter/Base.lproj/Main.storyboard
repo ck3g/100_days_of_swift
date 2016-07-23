@@ -18,18 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZpJ-c7-iSu">
-                                <rect key="frame" x="276" y="230" width="48" height="140"/>
+                                <rect key="frame" x="223.5" y="230" width="153" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6q-BY-T8R">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="92"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="92"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-ES-yfV">
-                                        <rect key="frame" x="0.0" y="92" width="48" height="48"/>
+                                        <rect key="frame" x="0.0" y="92" width="153" height="48"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Tap"/>
+                                        <state key="normal" title="Tap or Hold"/>
+                                        <connections>
+                                            <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYx-QI-QoH"/>
+                                            <outletCollection property="gestureRecognizers" destination="v9e-dC-B5s" appends="YES" id="2YP-ey-1FF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -41,10 +46,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Counter" id="Jjz-Ln-i9P">
-                        <barButtonItem key="leftBarButtonItem" title="Reset" id="zqz-Fk-PEX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="zqz-Fk-PEX">
+                            <connections>
+                                <action selector="tapResetButton:" destination="BYZ-38-t0r" id="hma-v2-xWl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="countLabel" destination="x6q-BY-T8R" id="qQF-3Z-XZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v9e-dC-B5s">
+                    <connections>
+                        <action selector="holdTapButton:" destination="BYZ-38-t0r" id="fUp-2N-XGM"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1117" y="361"/>
         </scene>
