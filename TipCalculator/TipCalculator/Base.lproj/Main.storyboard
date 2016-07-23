@@ -66,8 +66,11 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-Zm-6Ka">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-Zm-6Ka">
                                         <rect key="frame" x="-2" y="190" width="564" height="31"/>
+                                        <connections>
+                                            <action selector="dragTipSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="F0I-Gk-OdT"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <constraints>
@@ -90,6 +93,10 @@
                     <navigationItem key="navigationItem" title="Tip Calculator" id="9qM-S3-H5X"/>
                     <connections>
                         <outlet property="subtotalTextField" destination="rkS-1E-wpM" id="QjK-eE-oaH"/>
+                        <outlet property="tipAmountLabel" destination="N15-ri-0Qu" id="34J-eo-bmf"/>
+                        <outlet property="tipPercentLabel" destination="HZd-Og-gzQ" id="ozS-EE-BG8"/>
+                        <outlet property="tipSlider" destination="BAC-Zm-6Ka" id="avb-EV-XPG"/>
+                        <outlet property="totalLabel" destination="NGF-oX-iRx" id="5eR-Qq-tKd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
