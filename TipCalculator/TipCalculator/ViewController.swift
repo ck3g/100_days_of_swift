@@ -22,7 +22,14 @@ class ViewController: UIViewController {
 
     // MARK: - Functions
     func dismissKeyboard() {
+        subtotalTextField.resignFirstResponder()
 
+        if subtotalTextField.text?.characters.count == 0 {
+            subtotalTextField.text = "0.00"
+        }
+
+        model.subtotal = Double(subtotalTextField.text!)!
+        subtotalTextField.text = model.subtotalAsCurrency
     }
 
     func createToolbar() {
