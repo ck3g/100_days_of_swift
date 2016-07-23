@@ -10,16 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        subtotalTextField.becomeFirstResponder()
+        createToolbar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Outlets
+    @IBOutlet weak var subtotalTextField: UITextField!
+
+    // MARK: - Functions
+    func dismissKeyboard() {
+
     }
 
+    func createToolbar() {
+        // create toolbar
+        let toolbar = UIToolbar()
+        toolbar.barStyle = .Default
+        toolbar.sizeToFit()
 
+        // create button
+        let doneButton = UIBarButtonItem(
+            title: "Done",
+            style: .Done,
+            target: self,
+            action: #selector(ViewController.dismissKeyboard))
+
+        // create flexible space
+        let flexibleSpace = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace,
+            target: nil,
+            action: nil)
+
+        // add button to toolbar
+        toolbar.setItems([flexibleSpace, doneButton], animated: true)
+
+        // attach to the keyboard
+        subtotalTextField.inputAccessoryView = toolbar
+    }
 }
 
