@@ -10,16 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        firstViewTextField.becomeFirstResponder()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - Outlets
+    @IBOutlet weak var firstViewTextField: UITextView!
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        savedMessage = firstViewTextField.text
+    }
 
 }
 
