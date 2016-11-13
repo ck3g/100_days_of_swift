@@ -51,8 +51,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Photo" id="omm-Ke-b6B">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bXH-3W-n2a"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bXH-3W-n2a">
+                            <connections>
+                                <action selector="tapCameraButton:" destination="BYZ-38-t0r" id="v2n-JT-edI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="pht-vH-v94" id="YUJ-6H-u9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
