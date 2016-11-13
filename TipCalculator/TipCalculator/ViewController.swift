@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
 
     // MARK: - Interractions
-    @IBAction func dragTipSlider(sender: UISlider) {
+    @IBAction func dragTipSlider(_ sender: UISlider) {
         updateModelAndLabels()
     }
 
@@ -53,19 +53,19 @@ class ViewController: UIViewController {
     func createToolbar() {
         // create toolbar
         let toolbar = UIToolbar()
-        toolbar.barStyle = .Default
+        toolbar.barStyle = .default
         toolbar.sizeToFit()
 
         // create button
         let doneButton = UIBarButtonItem(
             title: "Done",
-            style: .Done,
+            style: .done,
             target: self,
             action: #selector(ViewController.dismissKeyboard))
 
         // create flexible space
         let flexibleSpace = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace,
+            barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace,
             target: nil,
             action: nil)
 
